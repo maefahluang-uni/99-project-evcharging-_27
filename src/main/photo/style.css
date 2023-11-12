@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.sidebar {
+    width: 264px;
+    height: 100%; 
+    position: fixed; 
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    position: fixed; 
+    
+}
+
+
+.sidebar ul li {
+    list-style: none;
+    margin: 15px 0;
+    font-size: 20px;
+}
+
+
+
+.sidebar a {
+    text-decoration: none;
+    color: #fff;   
+}
+
+
+.logo {
+    max-width: 100%; 
+    align-items: center;
+}
+
+.blogin {
+    background-color: #FF6F31;
+    width: 165px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blogin div {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* ระยะห่างระหว่างไอคอนและข้อความ */
+}
+
+.blogin i {
+    font-size: 24px;
+    color: white;
+}
+
+

@@ -1,0 +1,44 @@
+#map{
+    height: 100%;
+}
+
+
+/* styles.css */
+.custom-infowindow {
+    font-family: Arial, sans-serif;
+    max-width: 250px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+}
+
+.custom-infowindow strong {
+    color: #ff6a00;
+    display: block;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.custom-infowindow p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.custom-infowindow a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 8px;
+}
+
+
+
+
+.custom-infowindow img {
+    width: 28px;
+    height: auto;
+    flex-shrink: 0;
+}
