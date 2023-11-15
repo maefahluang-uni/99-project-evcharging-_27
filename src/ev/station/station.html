@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="mapstyle.css">
+    <link rel="stylesheet" href="station.css">
+    
+</head>
+
+<body>
+
+    <div class="grid">
+        <div class="sidebar con">
+            <div class="logo">
+                <a href="">
+                    <img src="logo.png" alt="">
+                </a>
+            </div>
+
+            <div class="loginbox">
+                <a href="login.html">Login</a>
+            </div>
+            <div class="sign">
+                <a href="">Signin</a>
+            </div>
+            <ul>
+                <li>
+                    <a href="">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <span>View map</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="bi bi-calendar2-week-fill"></i>
+                        <span>Booking</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Station.html">
+                        <i class="bi bi-ev-station"></i>
+                        <span>Station</span>
+                    </a>
+                </li>
+                <li>
+                    <h3>Contact us</h3>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>Support</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="fa-solid fa-bug"></i>
+                        <span>Report issue</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="fa-solid fa-star"></i>
+                        <span>Ratting</span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+        <div class="navbar con">
+
+            <div class="map">
+                <span><a href="">Map</a></span>
+            </div>
+
+            <div class="station">
+                <span><a href="">Station</a></span>
+            </div>
+
+            <div class="searchcontainer">
+
+                <div id="search-wrapper">
+
+                    <input type="text" id="search" placeholder="Place,Postcode">
+                    <button id="search-button"><a href=""><i class="search-icon fas fa-search"></i></a></button>
+
+                </div>
+            </div>
+
+        </div>
+
+        
+
+        <div class="content con">
+            
+            <div class="constation">
+                <!-- Location 1 -->
+                <div class="loc1">
+                    <h2>PT Gas Station Liangmueangchiangrai</h2>
+                    <img src="https://carnetwork.s3.ap-southeast-1.amazonaws.com/file/69380a69146f4defbe2115ac6d2e54e0.jpg" alt="Location 1 Image">
+                    <p>396 หมู่ที่5, ตำบลริมกก อำเภอเมืองเชียงราย เชียงราย 57100</p>
+                    <p class="facilities">Facilities: <span class="facility">Restrooms</span><span class="facility">Toilet</span> <span class="facility">Coffee Shop</span><span class="facility">Restaurant</span> <span class="facility">Parking</span> <span class="facility">Shops</span></p>
+                    <a href="#location1">Link to Location 1</a>
+                    <a href="#Booking">Booking</a>
+                    <a href="Review">Review</a>
+                </div>
+        
+                <!-- Location 2 -->
+                <div class="loc2">
+                    <h2>งีบ เบด แอนด์ อีวี สเตชั่น</h2>
+                    <img src=https://scontent.fbkk5-3.fna.fbcdn.net/v/t39.30808-6/273806210_2212747522266573_162948955736198107_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=ljW7B9lSZtQAX8JbHHR&_nc_ht=scontent.fbkk5-3.fna&oh=00_AfA8cI0NZG-D7bDcadE3IpnF-Q-0VD7aoizc1NF40dUEDw&oe=6558064F alt="Location 2 Image">
+                    <p>123/2 San Khok Chang Rd, Rop Wiang Sub-district, Mueang Chiang Rai District, Chiang Rai 57000</p>
+                    <p class="facilities">Facilities: <span class="facility">Restrooms</span><span class="facility">Toilet</span> <span class="facility">Coffee Shop</span> <span class="facility">Parking</span><span class="facility">WiFi</span> <span class="facility">Restaurant</span> <span class="facility">Shops</span></p>
+                    <a href="#location2">Link to Location 2</a>
+                    <a href="#Booking">Booking</a>
+                    <a href="Review">Review</a>
+                </div>
+        
+                <div class="loc3">
+                    <h2>EVolt Charging Station</h2>
+                    <img src=https://oyo-787-ngeeb-bed-breakfast-chiang-rai.hotelmix.co.th/data/Photos/OriginalPhoto/10357/1035701/1035701929/Oyo-787-Ngeeb-Bed-Breakfast-Chiang-Rai-Exterior.JPEG alt="Location 2 Image">
+                    <p> Phahon Yothin Rd, Chom Mok Kaeo, Amphoe Mae Lao, Chang Wat Chiang Rai 57250</p>
+                    <p class="facilities">Facilities: <span class="facility">Restrooms</span><span class="facility">Toilet</span> <span class="facility">Coffee Shop</span><span class="facility">Restaurant</span><span class="facility">Parking</span> <span class="facility">Shops</span></p>
+                    <a href="#location2">Link to Location 2</a>
+                    <a href="#Booking">Booking</a>
+                    <a href="Review">Review</a>
+                </div>
+
+                <div class="loc4">
+                    <h2>PTT Station ปตท.มหาวิทยาลัยแม่ฟ้าหลวง</h2>
+                    <img src=https://carnetwork.s3.ap-southeast-1.amazonaws.com/file/6f6f503aefed4b0b89e7fd26ca87862c.jpg alt="Location 2 Image">
+                    <p>284 หมู่ที่ 10 Nang Lae, Mueang Chiang Rai District, Chiang Rai 57100</p>
+                    <p class="facilities">Facilities: <span class="facility">Restrooms</span><span class="facility">Toilet</span> <span class="facility">Coffee Shop</span><span class="facility">Restaurant</span><span class="facility">Parking</span><span class="facility">WiFi</span> <span class="facility">Shops</span></p>
+                    <a href="#location2">Link to Location 2</a>
+                    <a href="#Booking">Booking</a>
+                    <a href="Review">Review</a>
+                </div>
+
+                <div class="loc5">
+                    <h2>ปั๊มเอสโซ่ หจก.ภาณุออยล์ เซอร์วิส</h2>
+                    <img src=https://images.autofun.co.th/file1/bf5870f3f2514a14ad77be0228ed57d7_678x380.jpg alt="Location 2 Image">
+                    <p>284 หมู่ 3 ถ.เชียงใหม่-เชียงราย ต.แม่สรวย อ, Mae Suai District, Chiang Rai 57180.</p>
+                    <p class="facilities">Facilities: <span class="facility">Restrooms</span><span class="facility">Toilet</span><span class="facility">Restaurant</span><span class="facility">Parking</span> <span class="facility">Shops</span></p>
+                    <a href="#location2">Link to Location 2</a>
+                    <a href="#Booking">Booking</a>
+                    <a href="Review">Review</a>
+                </div>
+
+                <div class="loc6">
+                    <h2>PTT Station ปตท.ห้าแยกพ่อขุน สถานีบริการน้ำมัน + NGV + EV เคยูออยล์</h2>
+                    <img src="image2.jpg" alt="Location 2 Image">
+                    <p>347/2 หมู่ที่ 12 Mueang Chiang Rai District, Chiang Rai 57000</p>
+                    <a href="#location2">Link to Location 2</a>
+                    <a href="#Booking">Booking</a>
+                    <a href="Review">Review</a>
+                </div>
+
+                <div class="loc7">
+                    <h2>PTT Station ปตท.ริมกก (น้ำมัน+EV) หจก.ปัญญามอเตอร์ส</h2>
+                    <img src="image2.jpg" alt="Location 2 Image">
+                    <p>Details about Location 2...</p>
+                    <a href="#location2">Link to Location 2</a>
+                    <a href="#Booking">Booking</a>
+                    <a href="Review">Review</a>
+                </div>
+
+                <div class="loc8">
+                    <h2>PTT Station ปตท.เวียงป่าเป้า (น้ำมัน+EV) (เชียงรายกิตติรัตน์ สาขาเวียงป่าเป้า)</h2>
+                    <img src="image2.jpg" alt="Location 2 Image">
+                    <p>Details about Location 2...</p>
+                    <a href="#location2">Link to Location 2</a>
+                    <a href="#Booking">Booking</a>
+                    <a href="Review">Review</a>
+                </div>
+
+                <div class="loc9">
+                    <h2>PTT Station ปตท. ถนนบายพาสวงแหวนตะวันออกเชียงราย (น้ำมัน+EV)</h2>
+                    <img src="image2.jpg" alt="Location 2 Image">
+                    <p>Details about Location 2...</p>
+                    <a href="#location2">Link to Location 2</a>
+                    <a href="#Booking">Booking</a>
+                    <a href="Review">Review</a>
+                </div>
+               
+                <div class="loc10">
+                    <h2>PTT Station ปตท.แม่ขะจาน (น้ำมัน+EV) หจก.เชียงรายกิตติรัตน์</h2>
+                    <img src="image2.jpg" alt="Location 2 Image">
+                    <p>Details about Location 2...</p>
+                    <a href="#location2">Link to Location 2</a>
+                    <a href="#Booking">Booking</a>
+                    <a href="Review">Review</a>
+                </div>
+                
+                <div class="loc11">
+                    <h2>เซ็นทรัล เชียงราย</h2>
+                    <img src=https://mpics.mgronline.com/pics/Images/562000002473501.JPEG alt="Location 2 Image">
+                    <p>99/9 Phahon Yothin Rd, Tambon Rop Wiang, Mueang Chiang Rai District, Chiang Rai 57000</p>
+                    <a href="#location2">Link to Location 2</a>
+                    <a href="#Booking">Booking</a>
+                    <a href="Review">Review</a>
+                </div>
+
+                <div class="loc12">
+                    <h2>Location 12</h2>
+                    <img src="image2.jpg" alt="Location 2 Image">
+                    <p>Details about Location 2...</p>
+                    <a href="#location2">Link to Location 2</a>
+                    <a href="#Booking">Booking</a>
+                    <a href="Review">Review</a>
+                </div>
+
+                <div class="loc13">
+                    <h2>Location 13</h2>
+                    <img src="image2.jpg" alt="Location 2 Image">
+                    <p>Details about Location 2...</p>
+                    <a href="#location2">Link to Location 2</a>
+                    <a href="#Booking">Booking</a>
+                    <a href="Review">Review</a>
+                </div>
+
+                <div class="loc14">
+                    <h2>Location 14</h2>
+                    <img src="image2.jpg" alt="Location 2 Image">
+                    <p>Details about Location 2...</p>
+                    <a href="#location2">Link to Location 2</a>
+                    <a href="#Booking">Booking</a>
+                    <a href="Review">Review</a>
+                </div>
+
+                <div class="loc15">
+                    <h2>Location 15</h2>
+                    <img src="image2.jpg" alt="Location 2 Image">
+                    <p>Details about Location 2...</p>
+                    <a href="#location2">Link to Location 2</a>
+                    <a href="#Booking">Booking</a>
+                    <a href="Review">Review</a>
+                </div>
+
+                <div class="loc16">
+                    <h2>Location 16</h2>
+                    <img src="image2.jpg" alt="Location 2 Image">
+                    <p>Details about Location 2...</p>
+                    <a href="#location2">Link to Location 2</a>
+                    <a href="#Booking">Booking</a>
+                    <a href="Review">Review</a>
+                </div>
+                
+                <div class="loc17">
+                    <h2>Location 17</h2>
+                    <img src="image2.jpg" alt="Location 2 Image">
+                    <p>Details about Location 2...</p>
+                    <a href="#location2">Link to Location 2</a>
+                    <a href="#Booking">Booking</a>
+                    <a href="Review">Review</a>
+                </div>
+               
+               
+        
+            </div>
+        </div>
+        
+        
+    </div>
+
+</body>
+
+</html>
+
+
+
+
+<!-- </div>
+
+<div class="loc5">
+<h1>PT Gas Station Liangmueangchiangrai1</h1>
+<img src="https://images.autofun.co.th/file1/6f6f503aefed4b0b89e7fd26ca87862c_678x380.jpg" alt="">
+<p> ชร.5023 Wiang Chai, Mueang Chiang Rai District, Chiang Rai 57210</p>
+<a href="">Navigate</a>
+<a href="">Booking</a>
+
+</div>
+</div>
+
+<div class="loc6">
+<h1>PTT Station ปตท.ห้าแยกพ่อขุน สถานีบริการน้ำมัน + NGV + EV เคยูออยล์</h1>
+<img src="https://images.autofun.co.th/file1/6f6f503aefed4b0b89e7fd26ca87862c_678x380.jpg" alt="">
+<p> Thanon Phaholyothin Frontage, Tambon Wiang, Amphoe Mueang Chiang Rai, Chang Wat Chiang Rai 57000</p>
+<a href="">Navigate</a>
+<a href="">Booking</a>
+
+</div>
+</div>
+
+<div class="loc7">
+<h1>PTT Station ปตท.ริมกก (น้ำมัน+EV) หจก.ปัญญามอเตอร์ส</h1>
+<img src="https://images.autofun.co.th/file1/6f6f503aefed4b0b89e7fd26ca87862c_678x380.jpg" alt="">
+<p> Rim Kok, Mueang Chiang Rai District, Chiang Rai 57100</p>
+<a href="">Navigate</a>
+<a href="">Booking</a>
+
+</div>
+</div>
+
+<div class="loc8">
+<h1>PTT Station ปตท.เวียงป่าเป้า (น้ำมัน+EV) (เชียงรายกิตติรัตน์ สาขาเวียงป่าเป้า)</h1>
+<img src="https://images.autofun.co.th/file1/6f6f503aefed4b0b89e7fd26ca87862c_678x380.jpg" alt="">
+<p> Wiang, Wiang Pa Pao District, Chiang Rai 57170</p>
+<a href="">Navigate</a>
+<a href="">Booking</a>
+
+</div>
+</div>
+
+<div class="loc9">
+<h1>PTT Station ปตท. ถนนบายพาสวงแหวนตะวันออกเชียงราย (น้ำมัน+EV)</h1>
+<img src="https://images.autofun.co.th/file1/6f6f503aefed4b0b89e7fd26ca87862c_678x380.jpg" alt="">
+<p> 444 Tha Sai, Mueang Chiang Rai District, Chiang Rai 57000</p>
+<a href="">Navigate</a>
+<a href="">Booking</a>
+
+</div>
+</div>
+
+<div class="loc10">
+<h1>PTT Station ปตท.แม่ขะจาน (น้ำมัน+EV) หจก.เชียงรายกิตติรัตน์</h1>
+<img src="https://images.autofun.co.th/file1/6f6f503aefed4b0b89e7fd26ca87862c_678x380.jpg" alt="">
+<p>19 หมู่ที่ 1 ถนน เชียงราย-เชียงใหม่ Mae Chedi, Wiang Pa Pao District, Chiang Rai 57260</p>
+<a href="">Navigate</a>
+<a href="">Booking</a>
+
+</div>
+</div>
+
+<div class="loc11">
+<h1>เซ็นทรัล เชียงราย</h1>
+<img src="https://images.autofun.co.th/file1/6f6f503aefed4b0b89e7fd26ca87862c_678x380.jpg" alt="">
+<p>99/9 Phahon Yothin Rd, Tambon Rop Wiang, Mueang Chiang Rai District, Chiang Rai 57000</p>
+<a href="">Navigate</a>
+<a href="">Booking</a>
+
+</div>
+</div>
+
+<div class="loc12">
+<h1>หมวดทางหลวงแม่สาย</h1>
+<img src="https://images.autofun.co.th/file1/6f6f503aefed4b0b89e7fd26ca87862c_678x380.jpg" alt="">
+<p> Pong Ngam, Mae Sai District, Chiang Rai 57130</p>
+<a href="">Navigate</a>
+<a href="">Booking</a>
+
+</div>
+</div>
+
+<div class="loc13">
+<h1>หมวดทางหลวงแม่จัน</h1>
+<img src="https://images.autofun.co.th/file1/6f6f503aefed4b0b89e7fd26ca87862c_678x380.jpg" alt="">
+<p> Mae Chan, Mae Chan District, Chiang Rai 57110</p>
+<a href="">Navigate</a>
+<a href="">Booking</a>
+
+</div> -->

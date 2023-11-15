@@ -1,0 +1,306 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #D4CFCF;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: 265px 1fr;
+    grid-template-rows: 150px 1fr auto; 
+    
+    height: 100vh; 
+    grid-template-areas:
+        "sidebar navbar"
+        "sidebar content"
+        "footer footer"; 
+}
+.sidebar {
+    grid-area: sidebar;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    position: fixed;
+    height: 100%; 
+    width: 265px; 
+}
+
+
+.logo a img{
+    max-width: 100%;
+    text-decoration: none;
+}
+
+.sidebar ul li a {
+    color: #fff; 
+    font-size: 18px; 
+    text-decoration: none;  
+
+}
+
+
+ul li a i{ /*ใส่สีโลโก้*/
+    color: #FF6F31;
+}
+
+
+ul li{
+    margin:23px 0;
+}
+
+ul{
+    list-style: none;
+    
+}
+
+.loginbox a{
+  color: white;   
+  text-decoration: none;
+  background-color: #FF6F31;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border-radius: 8px;
+}
+
+.sign a{
+    color: rgb(0, 0, 0);   
+    text-decoration: none;
+    background-color: #ffffff;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 8px;  
+}
+
+
+
+.navbar {
+    grid-area: navbar;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    border: solid rgb(220, 218, 218);
+    display: flex;
+    left: 265px;
+    width: 95%;
+    padding: 10px;
+    margin: 30px;
+    
+}
+
+.navbar .map a{
+    color: white;   
+    text-decoration: none;
+    background-color: #FF6F31;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    padding: 10px 30px;
+    margin: 10px 0;
+    border-radius: 8px;
+    
+}
+
+.navbar .station a{
+    color: rgb(0, 0, 0);   
+    text-decoration: none;
+    background-color: #ffffff;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+
+}
+
+.map,.station{
+    padding:0 1rem;
+}
+
+
+
+.searchcontainer {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    padding: 10px;
+}
+
+#search-wrapper {
+    display: flex;
+    border: 1px solid rgba(0, 0, 0, 0.276);
+    align-items: stretch;
+    border-radius: 50px;
+    background-color: #fff;
+    overflow: hidden;
+    max-width: 400px;
+    box-shadow: 2px 1px 5px 1px rgba(0, 0, 0, 0.273);
+}
+
+#search {
+    border: none;
+    width: 100%;
+    font-size: 15px;
+    padding: 10px;
+}
+
+#search:focus {
+    outline: none;
+}
+
+.search-icon {
+    margin: 10px;
+    color: rgba(0, 0, 0, 0.564);
+}
+
+#search-button {
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    background-color: #FF6F31;
+    padding: 0px 10px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+
+.content {
+    grid-area: content;
+    padding: 30px;
+    margin: 10px;
+    
+}
+.footer {
+    grid-area: footer;
+    background-color: #333;
+}
+
+.constation{
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    overflow-y: auto;
+    
+}
+
+
+
+.loc1,
+.loc2,
+.loc3,
+.loc4,
+.loc5,
+.loc6 {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.loc1 img,
+.loc2 img,
+.loc3 img,
+.loc4 img,
+.loc5 img,
+.loc6 img {
+    padding: 10px 0;
+    max-width: 50%;
+    
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.loc1 h2,
+.loc2 h2,
+.loc3 h2,
+.loc4 h2,
+.loc5 h2,
+.loc6 h2 {
+    color: #333;
+}
+
+.loc1 p,
+.loc2 p,
+.loc3 p,
+.loc4 p,
+.loc5 p,
+.loc6 p {
+    color: #666;
+}
+
+.loc1 a,
+.loc2 a,
+.loc3 a,
+.loc4 a,
+.loc5 a,
+.loc6 a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.loc1 a:hover,
+.loc2 a:hover,
+.loc3 a:hover,
+.loc4 a:hover,
+.loc5 a:hover,
+.loc6 a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+
+/* CSS */
+.facility {
+    background-color: #FF6F31; /* สีพื้นหลัง */
+    color: white; /* สีตัวอักษร */
+    padding: 5px 10px; /* ระยะขอบของข้อความ */
+    border-radius: 5px; /* ขอบมน */
+    margin-right: 5px; /* ระยะห่างข้างขวา */
+    display: inline-block; /* ทำให้คลาสเป็นพื้นที่แบบ inline-block */
+    text-decoration: none; /* ลบขีดเส้นใต้ลิงก์ */
+    margin: 8px;
+}
+
+.facility:hover {
+    background-color: #333; /* สีพื้นหลังเมื่อเม้าส์ hover */
+}
+
+
+.booking {
+    background-color: #007bff; /* สีพื้นหลังปุ่ม Booking */
+    color: #fff; /* สีข้อความของปุ่ม Booking */
+    padding: 8px 16px; /* ขนาด padding ของปุ่ม Booking */
+    border: 1px solid #007bff; /* ขอบปุ่ม Booking */
+    border-radius: 4px; /* มุมขอบของปุ่ม Booking */
+    transition: background-color 0.3s; /* เพื่อทำให้เกิดการเปลี่ยนสีเมื่อ hover */
+    
+}
+
+.booking:hover {
+    background-color: #0056b3; /* สีเมื่อ hover ของปุ่ม Booking */
+    border: 1px solid #0056b3; /* ขอบเมื่อ hover ของปุ่ม Booking */
+}
+
+
