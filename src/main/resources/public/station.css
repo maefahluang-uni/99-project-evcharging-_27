@@ -221,7 +221,6 @@ ul{
 .loc6 img {
     padding: 10px 0;
     max-width: 50%;
-    
     border-radius: 8px;
     margin-bottom: 10px;
 }
@@ -255,7 +254,7 @@ ul{
     font-weight: bold;
     display: inline-block;
     padding: 8px 16px;
-    border: 1px solid #007bff;
+    border: 1px solid rgb(255, 255, 255);
     border-radius: 4px;
     transition: background-color 0.3s;
 }
@@ -266,41 +265,6 @@ ul{
 .loc4 a:hover,
 .loc5 a:hover,
 .loc6 a:hover {
-    background-color: #007bff;
+    background-color: #ff0000;
     color: #fff;
 }
-
-
-/* CSS */
-.facility {
-    background-color: #FF6F31; /* สีพื้นหลัง */
-    color: white; /* สีตัวอักษร */
-    padding: 5px 10px; /* ระยะขอบของข้อความ */
-    border-radius: 5px; /* ขอบมน */
-    margin-right: 5px; /* ระยะห่างข้างขวา */
-    display: inline-block; /* ทำให้คลาสเป็นพื้นที่แบบ inline-block */
-    text-decoration: none; /* ลบขีดเส้นใต้ลิงก์ */
-    margin: 8px;
-}
-
-.facility:hover {
-    background-color: #333; /* สีพื้นหลังเมื่อเม้าส์ hover */
-}
-
-
-.booking {
-    background-color: #007bff; /* สีพื้นหลังปุ่ม Booking */
-    color: #fff; /* สีข้อความของปุ่ม Booking */
-    padding: 8px 16px; /* ขนาด padding ของปุ่ม Booking */
-    border: 1px solid #007bff; /* ขอบปุ่ม Booking */
-    border-radius: 4px; /* มุมขอบของปุ่ม Booking */
-    transition: background-color 0.3s; /* เพื่อทำให้เกิดการเปลี่ยนสีเมื่อ hover */
-    
-}
-
-.booking:hover {
-    background-color: #0056b3; /* สีเมื่อ hover ของปุ่ม Booking */
-    border: 1px solid #0056b3; /* ขอบเมื่อ hover ของปุ่ม Booking */
-}
-
-
