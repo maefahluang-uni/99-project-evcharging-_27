@@ -1,15 +1,26 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@SpringBootApplication
+public class YourApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(YourApplication.class, args);
+    }
 /**
  * This class handles user registration by interacting with a MySQL database.
  */
+@Component
 public class Registration {
+
+    private final JdbcTemplate jdbcTemplate;
+
+    // ให้ Spring Boot ซึ่งเป็น dependency injection container, ให้ JdbcTemplate มาที่ constructor
+    public Registration(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     /**
      * Registers a new user in the system.
@@ -19,59 +30,27 @@ public class Registration {
      * @param password The password of the new user.
      */
     public void registerUser(String username, String email, String password) {
-        Connection conn = null;
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
+        // Check if the username or email already exists in the database
+        String userCheckQuery = "SELECT * FROM user WHERE username = ? OR email = ?";
+        // ใช้ JdbcTemplate.queryForList แทนการใช้ ResultSet
+        List<Map<String, Object>> rows = jdbcTemplate.queryForList(userCheckQuery, username, email);
 
-        try {
-            // Database connection details
-            String url = "jdbc:mysql://localhost:3306/register_ev";
-            String dbUsername = "root";
-            String dbPassword = "ev_project1";
-
-            // Establish a connection to the database
-            conn = DriverManager.getConnection(url, dbUsername, dbPassword);
-
-            // Check if the username or email already exists in the database
-            String userCheckQuery = "SELECT * FROM user WHERE username = ? OR email = ?";
-            preparedStatement = conn.prepareStatement(userCheckQuery);
-            preparedStatement.setString(1, username);
-            preparedStatement.setString(2, email);
-            resultSet = preparedStatement.executeQuery();
-
-            if (resultSet.next()) {
-                if (resultSet.getString("username").equals(username)) {
-                    System.out.println("Username already exists");
-                }
-                if (resultSet.getString("email").equals(email)) {
-                    System.out.println("Email already exists");
-                }
-            } else {
-                // If no errors, register the new user
-                String insertUserQuery = "INSERT INTO user(username, email, password) VALUES(?, ?, ?)";
-                preparedStatement = conn.prepareStatement(insertUserQuery);
-                preparedStatement.setString(1, username);
-                preparedStatement.setString(2, email);
-                preparedStatement.setString(3, hashPassword(password));
-
-                // Execute the query and check if the registration was successful
-                int rowsAffected = preparedStatement.executeUpdate();
-
-                if (rowsAffected > 0) {
-                    System.out.println("User registered successfully");
-                }
+        if (!rows.isEmpty()) {
+            Map<String, Object> user = rows.get(0);
+            if (user.get("username").equals(username)) {
+                System.out.println("Username already exists");
             }
+            if (user.get("email").equals(email)) {
+                System.out.println("Email already exists");
+            }
+        } else {
+            // If no errors, register the new user
+            String insertUserQuery = "INSERT INTO user(username, email, password) VALUES(?, ?, ?)";
+            // ใช้ JdbcTemplate.update แทนการใช้ PreparedStatement
+            int rowsAffected = jdbcTemplate.update(insertUserQuery, username, email, hashPassword(password));
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            // Close all resources
-            try {
-                if (resultSet != null) resultSet.close();
-                if (preparedStatement != null) preparedStatement.close();
-                if (conn != null) conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
+            if (rowsAffected > 0) {
+                System.out.println("User registered successfully");
             }
         }
     }
