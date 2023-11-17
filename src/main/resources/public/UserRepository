@@ -1,0 +1,8 @@
+import org.springframework.data.repository.CrudRepository;
+
+public interface UserRepository extends CrudRepository<User, String> {
+
+    // เพิ่มเมธอดเพื่อค้นหาผู้ใช้ตาม username หรือ email
+    User findByUsername(String username);
+    User findByEmail(String email);
+}

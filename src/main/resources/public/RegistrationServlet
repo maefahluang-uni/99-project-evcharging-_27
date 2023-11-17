@@ -1,0 +1,36 @@
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import javax.servlet.ServletException;
+
+@RestController
+public class RegistrationServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    @PostMapping("/RegistrationServlet")
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String username = request.getParameter("username");
+        String email = request.getParameter("email");
+        String password1 = request.getParameter("password1");
+        String password2 = request.getParameter("password2");
+
+        // ตรวจสอบว่ารหัสผ่านที่กรอกใน password1 และ password2 ตรงกันหรือไม่
+        if (!password1.equals(password2)) {
+            // กรณีรหัสผ่านไม่ตรงกัน
+            response.sendRedirect("error.jsp");
+            return;
+        }
+
+        // สร้าง instance ของ Registration
+        Registration registration = new Registration();
+
+        // เรียกใช้เมธอด registerUser ใน Registration
+        registration.registerUser(username, email, password1);
+
+        // เมื่อลงทะเบียนเสร็จสิ้น, ส่งผู้ใช้ไปยังหน้า success.jsp
+        response.sendRedirect("success.jsp");
+    }
+}
