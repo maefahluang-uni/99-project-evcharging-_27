@@ -1,9 +1,0 @@
-<servlet>
-    <servlet-name>registrationServlet</servlet-name>
-    <servlet-class>your.package.name.RegistrationServlet</servlet-class>
-</servlet>
-
-<servlet-mapping>
-    <servlet-name>registrationServlet</servlet-name>
-    <url-pattern>/RegistrationServlet</url-pattern>
-</servlet-mapping>
