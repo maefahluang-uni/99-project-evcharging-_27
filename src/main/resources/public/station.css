@@ -204,7 +204,20 @@ ul{
 .loc3,
 .loc4,
 .loc5,
-.loc6 {
+.loc6,
+.loc7,
+.loc8, 
+.loc9, 
+.loc10, 
+.loc11, 
+.loc12, 
+.loc13, 
+.loc14, 
+.loc15, 
+.loc16, 
+.loc17 
+
+{
     background-color: #fff;
     padding: 15px;
     border: 1px solid #ccc;
@@ -213,24 +226,26 @@ ul{
     margin-bottom: 20px;
 }
 
-.loc1 img,
-.loc2 img,
-.loc3 img,
-.loc4 img,
-.loc5 img,
-.loc6 img {
-    padding: 10px 0;
-    max-width: 50%;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
+
 
 .loc1 h2,
 .loc2 h2,
 .loc3 h2,
 .loc4 h2,
 .loc5 h2,
-.loc6 h2 {
+.loc6 h2,
+.loc7 h2,
+.loc8 h2, 
+.loc9 h2, 
+.loc10 h2, 
+.loc11 h2, 
+.loc12 h2, 
+.loc13 h2, 
+.loc14 h2, 
+.loc15 h2, 
+.loc16 h2, 
+.loc17 h2
+{
     color: #333;
 }
 
@@ -239,7 +254,19 @@ ul{
 .loc3 p,
 .loc4 p,
 .loc5 p,
-.loc6 p {
+.loc6 p,
+.loc7 p,
+.loc8 p, 
+.loc9 p, 
+.loc10 p, 
+.loc11 p, 
+.loc12 p, 
+.loc13 p, 
+.loc14 p, 
+.loc15 p, 
+.loc16 p, 
+.loc17 p
+{
     color: #666;
 }
 
@@ -248,7 +275,18 @@ ul{
 .loc3 a,
 .loc4 a,
 .loc5 a,
-.loc6 a {
+.loc6 a,
+.loc7 a,
+.loc8 a, 
+.loc9 a, 
+.loc10 a, 
+.loc11 a, 
+.loc12 a, 
+.loc13 a, 
+.loc14 a, 
+.loc15 a, 
+.loc16 a, 
+.loc17 a{
     color: #007bff;
     text-decoration: none;
     font-weight: bold;
@@ -264,7 +302,18 @@ ul{
 .loc3 a:hover,
 .loc4 a:hover,
 .loc5 a:hover,
-.loc6 a:hover {
+.loc6 a:hover,
+.loc7 a:hover,
+.loc8 a:hover, 
+.loc9 a:hover, 
+.loc10 a:hover, 
+.loc11 a:hover, 
+.loc12 a:hover, 
+.loc13 a:hover, 
+.loc14 a:hover, 
+.loc15 a:hover, 
+.loc16 a:hover, 
+.loc17 a:hover{
     background-color: #ff0000;
     color: #fff;
 }
