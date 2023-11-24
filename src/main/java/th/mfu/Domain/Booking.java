@@ -1,9 +1,6 @@
 package th.mfu.Domain;
 
-import java.util.List;
-
 import javax.persistence.*;
-import javax.validation.Valid;
 
 @Entity
 public class Booking {
@@ -78,10 +75,6 @@ public class Booking {
 
     public void setFieldFive(String fieldFive) {
         this.fieldFive = fieldFive;
-    }
-
-    public List<Booking> booking(@Valid Booking bookingModel) {
-        return null;
     }
 
 

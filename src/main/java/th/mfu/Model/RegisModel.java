@@ -1,13 +1,10 @@
 package th.mfu.Model;
 
-import javax.validation.constraints.NotNull;
-
 public class RegisModel {
-    @NotNull
+    
     private String username;
-    @NotNull
     private String password;
-    @NotNull
+
     private String name;
 
     public String getUsername() {

@@ -1,12 +1,10 @@
 package th.mfu.Model;
 
-import javax.validation.constraints.NotNull;
-
 public class LoginModel {
     private Long id;
-    @NotNull
+    
     private String username;
-    @NotNull
+
     private String password;
 
     public void setId(Long id) {
