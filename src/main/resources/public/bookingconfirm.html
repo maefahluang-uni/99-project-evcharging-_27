@@ -15,6 +15,7 @@ session_start();
     <link rel="stylesheet" href="mapstyle.css">
     <link rel="stylesheet" href="../homepage/user.css">
     <link rel="stylesheet" href="booking.css">
+    <link rel="stylesheet" href="user.css">
     <style>
             .booking-info {
         border: 1px solid #ccc;
@@ -82,7 +83,38 @@ session_start();
                 </a>
             </div>
 
-           
+            <div class="main-content">
+                <div class="name">
+                    <h3><span id="usernamePlaceholder"></span></h3>
+                </div>
+                    <!-- ข้อมูลของผู้ใช้จะแสดงที่นี่ -->
+                    <div class="logout">
+                        <p><a href="#" onclick="logout()" style="color: red;">Logout</a></p>
+                    </div>
+                
+            </div>
+    
+            
+    <script>
+        // ตรวจสอบว่ามีข้อมูลผู้ใช้ที่เข้าสู่ระบบมาหรือไม่
+        const username = localStorage.getItem('username');
+        const userId = localStorage.getItem('userId');
+
+        if (username && userId) {
+            // แสดงข้อมูลผู้ใช้ที่เข้าสู่ระบบมา
+            document.getElementById('usernamePlaceholder').innerText = username;
+        } else {
+            // ไม่มีข้อมูลผู้ใช้, สามารถทำการ redirect หรือจัดการตามต้องการ
+            window.location = "login.html";
+        }
+
+        // เพิ่มฟังก์ชัน logout
+        function logout() {
+            localStorage.removeItem('username');
+            localStorage.removeItem('userId');
+            window.location = "/";
+        }
+    </script>
                 
             <ul>
                 <li>

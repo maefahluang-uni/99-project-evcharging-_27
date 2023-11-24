@@ -1,39 +1,32 @@
 package th.mfu.Controller;
 
+import org.apache.coyote.Response;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import th.mfu.Model.LoginModel;
+import th.mfu.Service.LoginService;
+
+import javax.validation.Valid;
 
 
-@Controller
+@RestController
 public class LoginController {
-    @GetMapping("/login")
-    public String showLoginForm() {
-        return "login";
+    @Autowired
+    LoginService loginService;
+
+    @PostMapping(value = "/login", produces = MediaType.APPLICATION_JSON_VALUE)
+    public LoginModel login(@Valid @RequestBody LoginModel loginModel) {
+        System.out.println(loginModel.getUsername());
+        System.out.println(loginModel.getPassword());
+        return loginService.login(loginModel.getUsername(), loginModel.getPassword());
     }
 
-     @PostMapping("/login")
-    public String login(@RequestParam String username, @RequestParam String password, RedirectAttributes attributes) {
-        if ("Admin".equals(username) && "1234".equals(password)) {
-            return "redirect:/station";
-        } else if ("Barista".equals(username) && "1234".equals(password)) {
-            return "redirect:/station";
-        }
-        
-        attributes.addFlashAttribute("error", "Invalid username or password");
-        return "redirect:/login";
-    }
     @GetMapping("/station")
-    public String showAdminForm(){
+    public String showAdminForm() {
         return "station";
     }
-    @GetMapping("barista-dashboard")
-    public String showBaristaForm(){
-        return "barista-dashboard";
-    }
-
-
-    }
+}
