@@ -26,7 +26,7 @@ public class LoginController {
         attributes.addFlashAttribute("error", "Invalid username or password");
         return "redirect:/login";
     }
-    @GetMapping("station")
+    @GetMapping("/station")
     public String showAdminForm(){
         return "station";
     }

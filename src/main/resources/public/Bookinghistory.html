@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +15,61 @@
     <link rel="stylesheet" href="mapstyle.css">
     <link rel="stylesheet" href="../homepage/user.css">
     <link rel="stylesheet" href="booking.css">
+    <style>
+            .booking-info {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        width: 400px;
+        margin: 20px auto;
+    }
+
+    .booking-info h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .booking-info label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .booking-info input[type="text"] {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 15px;
+    }
+
+    .booking-info input[type="submit"] {
+        background-color: #007bff;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .booking-info input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+    /* เพิ่มสีพื้นหลังและขอบมุมสำหรับ "charge" */
+.charge {
+    background-color: #f0f0f0; /* สีพื้นหลัง */
+    border: 1px solid #ccc; /* ขอบ */
+    border-radius: 10px; /* มุมโค้ง */
+    padding: 10px; /* ระยะห่างขอบ */
+    margin-top: 20px; /* ระยะห่างด้านบน */
+}
+
+/* ปรับสีข้อความ */
+.charge p {
+    color: #333; /* สีข้อความ */
+    margin: 5px 0; /* ระยะห่างข้อความ */
+}
+
+</style>
+    </style>
 </head>
 
 <body>
@@ -41,7 +98,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="../station/station.php">
                         <i class="bi bi-ev-station"></i>
                         <span>Station</span>
                     </a>
@@ -95,21 +152,7 @@
 
         <div class="content con">
             
-            <div class="reservation">
-                <h1>Charging Reservation</h1>
-                <p>Please select the time period you would like to reserve. You can reserve multiple consecutive charging periods.</p>
-                <div class="time-slots">
-                    <button>06.30-06.57</button>
-                    <button>07.00 - 07.27</button>
-                    <button>07.30 - 08.27</button>
-                    <button>08.30-08.57</button>
-                    <button>09.00 - 09.27</button>
-                    <button>09.30-09.57</button>
-                    <button>10.00 - 10.27</button>
-                </div>
-                <a href="bookingconfirm.html" class="reserve">Reserve</a>
-            </div>
-            
+           
                             
         </div>
     </div>
