@@ -116,7 +116,7 @@
 
 
             const xhr = new XMLHttpRequest();
-            xhr.open("GET", "http://localhost:8000/review?name=".concat(localStorage.getItem('username')), true);
+            xhr.open("GET", "http://localhost:8100/review?name=".concat(localStorage.getItem('username')), true);
             xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
             xhr.onload = () => {
                 if (xhr.status == 200) {
