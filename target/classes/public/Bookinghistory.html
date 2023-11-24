@@ -63,77 +63,53 @@
             color: #333; /* สีข้อความ */
             margin: 5px 0; /* ระยะห่างข้อความ */
         }
+        .booking-info {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #FF6F31;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #reviewResult {
+            margin-top: 20px;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ccc;
+            margin: 10px 0;
+        }
+    
     </style>
+
   
-  
-
-    <script>
-        
-         // ตรวจสอบว่ามีข้อมูลผู้ใช้ที่เข้าสู่ระบบมาหรือไม่
-         const username = localStorage.getItem('username');
-        const userId = localStorage.getItem('userId');
-
-        if (username && userId) {
-            // แสดงข้อมูลผู้ใช้ที่เข้าสู่ระบบมา
-            document.getElementById('usernamePlaceholder').innerText = username;
-        } else {
-            // ไม่มีข้อมูลผู้ใช้, สามารถทำการ redirect หรือจัดการตามต้องการ
-            window.location = "login.html";
-        }
-
-        // เพิ่มฟังก์ชัน logout
-        function logout() {
-            localStorage.removeItem('username');
-            localStorage.removeItem('userId');
-            window.location = "/";
-        }
-        
-
-
-        
-        
-        function displayBookingInfo(bookingData) {
-            var container = document.getElementById('bookingInfoContainer');
-            container.innerHTML = ''; // Clear previous content
-
-            if (bookingData.length > 0) {
-                bookingData.forEach(function (booking) {
-                    container.innerHTML += '<label>Name:</label><p>' + booking.name + '</p>';
-                    container.innerHTML += '<label>Field One:</label><p>' + booking.fieldOne + '</p>';
-                    container.innerHTML += '<label>Field Two:</label><p>' + booking.fieldTwo + '</p>';
-                    container.innerHTML += '<label>Field Three:</label><p>' + booking.fieldThree + '</p>';
-                    container.innerHTML += '<label>Field Four:</label><p>' + booking.fieldFour + '</p>';
-                    container.innerHTML += '<label>Field Five:</label><p>' + booking.fieldFive + '</p>';
-                });
-            } else {
-                container.innerHTML += '<p>No booking data found.</p>';
-            }
-        }
-
-        function review() {
-            
-            
-
-
-            const xhr = new XMLHttpRequest();
-            xhr.open("GET", "http://localhost:8100/review?name=".concat(localStorage.getItem('username')), true);
-            xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
-            xhr.onload = () => {
-                if (xhr.status == 200) {
-                    var bookingData = JSON.parse(xhr.responseText);
-                    displayBookingInfo(bookingData);
-                } else {
-                    console.log(`Error: ${xhr.status}`);
-                }
-            };
-            xhr.send(null);
-        }
-
-        // Call the review function when the document is ready
-        document.addEventListener("DOMContentLoaded", function () {
-            review();
-        });
-    </script>
 </head>
 
 <body>
@@ -146,17 +122,7 @@
                 </a>
             </div>
 
-            <div class="main-content">
-                <div class="name">
-                    <h3><span id="usernamePlaceholder"></span></h3>
-                </div>
-                    <!-- ข้อมูลของผู้ใช้จะแสดงที่นี่ -->
-                    <div class="logout">
-                        <p><a href="#" onclick="logout()" style="color: red;">Logout</a></p>
-                    </div>
-                
-            </div>
-
+      
 
 
             <ul>
@@ -216,9 +182,15 @@
             </div>
         </div>
         <div class="content con">
-            <div class="booking-info" id="bookingInfoContainer">
-                <h2>Booking Information</h2>
-                
+            
+            <div class="booking-info">
+                <h2>Booking History</h2>
+                <!-- Add your booking form here if needed -->
+        
+                <!-- Display the result of the review function here -->
+                <div id="reviewResult"></div>
+            </div
+            
             </div>
         </div>
     </div>
@@ -226,3 +198,51 @@
 </body>
 
 </html>
+
+
+<script src="https://momentjs.com/downloads/moment.min.js"></script>
+<script>
+    function review() {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "http://localhost:8100/review?name=trin", true);
+        xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+        xhr.onload = () => {
+            if (xhr.status == 200) {
+                const result = JSON.parse(xhr.responseText);
+                displayResult(result);
+            } else {
+                console.log(`Error: ${xhr.status}`);
+            }
+        };
+        xhr.send(null);
+    }
+
+    function displayResult(result) {
+        const resultDiv = document.getElementById("reviewResult");
+        resultDiv.innerHTML = "<h3>Booking Information:</h3>";
+
+        if (result.length > 0) {
+            result.forEach(item => {
+                const createDate = moment(item.create_date); // หรือใช้ date-fns ก็ได้
+                resultDiv.innerHTML += `
+                    <p>Name: ${item.name}</p>
+                    <p>Time Slot: ${item.fieldOne}</p>
+                    <p>Create Date: ${createDate.format('YYYY-MM-DD HH:mm:ss')}</p>
+                    <p>Station: ${item.fieldTwo}</p>
+                    <p>License Plate: ${item.fieldThree}</p>
+                    <hr>
+                `;
+            });
+        } else {
+            resultDiv.innerHTML += "<p>No booking information found.</p>";
+        }
+    }
+
+    // Call review() when the page loads
+    window.onload = function() {
+        review();
+    };
+</script>
+
+
+

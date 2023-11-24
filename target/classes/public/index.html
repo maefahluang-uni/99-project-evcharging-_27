@@ -29,57 +29,40 @@
                 <a href="signup.html">Sign up</a>
             </div>
 
-            <ul>
-                <li>
-                    <a href="">
-                        <i class="bi bi-geo-alt-fill"></i>
-                        <span>View map</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="Bookinghistory.html">
-                        <i class="bi bi-calendar2-week-fill"></i>
-                        <span>Booking History</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="station.html">
-                        <i class="bi bi-ev-station"></i>
-                        <span>Station</span>
-                    </a>
-                </li>
-                <li>
-                    <h3>Contact us</h3>
-                </li>
-                <li>
-                    <a href="">
-                        <i class="fa-solid fa-phone"></i>
-                        <span>Support</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <i class="fa-solid fa-bug"></i>
-                        <span>Report issue</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <i class="fa-solid fa-star"></i>
-                        <span>Ratting</span>
-                    </a>
-                </li>
-            </ul>
+          
+<ul>
+    <li>
+        <a href="#" onclick="alert('Please Login')">
+            <i class="bi bi-geo-alt-fill"></i>
+            <span>View map</span>
+        </a>
+    </li>
+    <li>
+        <a href="#" onclick="alert('Please Login')">
+            <i class="bi bi-calendar2-week-fill"></i>
+            <span>Booking History</span>
+        </a>
+    </li>
+    <li>
+        <a href="#" onclick="alert('Please Login')">
+            <i class="bi bi-ev-station"></i>
+            <span>Station</span>
+        </a>
+    </li>
+    <li>
+      
+</ul>
+
 
         </div>
         <div class="navbar con">
 
             <div class="map">
-                <span><a href="">Map</a></span>
+                <span><a href="#"onclick="alert('Please Login')" >Map</a></span>
             </div>
 
             <div class="station">
-                <span><a href="station.html">Booking</a></span>
+                <span><a href="#"onclick="alert('Please Login')">Booking</a></span>
             </div>
 
             <div class="searchcontainer">
@@ -94,6 +77,20 @@
 
         </div>
 
+
+        <script>
+            function checkLogin(action) {
+                // Replace this with your actual logic to check if the user is logged in
+                var isLoggedIn = false; // Change this to true if the user is logged in
+    
+                if (!isLoggedIn) {
+                    alert('You need to login first.');
+                } else {
+                    // Perform the desired action if the user is logged in
+                    alert('Performing ' + action + ' action.');
+                }
+            }
+        </script>
 
         <div class="content con">
             
