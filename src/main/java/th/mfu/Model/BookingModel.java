@@ -1,58 +1,58 @@
-// package th.mfu.Model;
+package th.mfu.Model;
 
-// public class BookingModel {
-//     private String name;
-//     private String fieldOne;
-//     private String fieldTwo;
-//     private String fieldThree;
-//     private String fieldFour;
-//     private String fieldFive;
+public class BookingModel {
+    private String name;
+    private String fieldOne;
+    private String fieldTwo;
+    private String fieldThree;
+    private String fieldFour;
+    private String fieldFive;
 
-//     public  String getName() {
-//         return name;
-//     }
+    public  String getName() {
+        return name;
+    }
 
-//     public void setName(String name) {
-//         this.name = name;
-//     }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-//     public String getFieldOne() {
-//         return fieldOne;
-//     }
+    public String getFieldOne() {
+        return fieldOne;
+    }
 
-//     public void setFieldOne(String fieldOne) {
-//         this.fieldOne = fieldOne;
-//     }
+    public void setFieldOne(String fieldOne) {
+        this.fieldOne = fieldOne;
+    }
 
-//     public String getFieldTwo() {
-//         return fieldTwo;
-//     }
+    public String getFieldTwo() {
+        return fieldTwo;
+    }
 
-//     public void setFieldTwo(String fieldTwo) {
-//         this.fieldTwo = fieldTwo;
-//     }
+    public void setFieldTwo(String fieldTwo) {
+        this.fieldTwo = fieldTwo;
+    }
 
-//     public String getFieldThree() {
-//         return fieldThree;
-//     }
+    public String getFieldThree() {
+        return fieldThree;
+    }
 
-//     public void setFieldThree(String fieldThree) {
-//         this.fieldThree = fieldThree;
-//     }
+    public void setFieldThree(String fieldThree) {
+        this.fieldThree = fieldThree;
+    }
 
-//     public String getFieldFore() {
-//         return fieldFour;
-//     }
+    public String getFieldFore() {
+        return fieldFour;
+    }
 
-//     public void setFieldFour(String fieldFour) {
-//         this.fieldFour = fieldFour;
-//     }
+    public void setFieldFour(String fieldFour) {
+        this.fieldFour = fieldFour;
+    }
 
-//     public String getFieldFive() {
-//         return fieldFive;
-//     }
+    public String getFieldFive() {
+        return fieldFive;
+    }
 
-//     public void setFieldFive(String fieldFive) {
-//         this.fieldFive = fieldFive;
-//     }
-// }
+    public void setFieldFive(String fieldFive) {
+        this.fieldFive = fieldFive;
+    }
+}
