@@ -25,4 +25,3 @@ CREATE TABLE testdb.station (
   time VARCHAR(45) NULL,
   PRIMARY KEY (`id`));
 
-  INSERT INTO `testdb`.`station` (`id`, `name`, `time`) VALUES ('1', 'EVolt Charging Station', '06.30-6.57');
