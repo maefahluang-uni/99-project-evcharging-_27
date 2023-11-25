@@ -18,3 +18,11 @@ CREATE TABLE `testdb`.`booking` (
   `create_date` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`));
 
+CREATE TABLE testdb.station (
+   `id` INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(45) NULL,
+  status VARCHAR(45) NULL,
+  time VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
+
+  INSERT INTO `testdb`.`station` (`id`, `name`, `time`) VALUES ('1', 'EVolt Charging Station', '06.30-6.57');
