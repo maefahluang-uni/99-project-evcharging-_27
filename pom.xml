@@ -8,7 +8,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
     <groupId>th.mfu</groupId>
-    <artifactId>test-web-concert</artifactId>
+    <artifactId>project-xxxxx</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
