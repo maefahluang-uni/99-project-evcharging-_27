@@ -1,29 +1,4 @@
-CREATE TABLE `user` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `username` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
-  `name` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`));
 
-CREATE TABLE `booking` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `name`  VARCHAR(45) NULL,
-  `field_one` VARCHAR(45) NULL,
-  `field_two` VARCHAR(45) NULL,
-  `field_three` VARCHAR(45) NULL,
-  `field_four` VARCHAR(45) NULL,
-  `field_five` VARCHAR(45) NULL,
-  `create_date` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`));
-
-CREATE TABLE station (
-   `id` INT NOT NULL AUTO_INCREMENT,
-  name VARCHAR(45) NULL,
-  status VARCHAR(45) NULL,
-  time VARCHAR(45) NULL,
-  PRIMARY KEY (`id`));  
-  
-  
   INSERT INTO `station` (`id`, `name`, `time`) VALUES ('1', 'EVolt Charging Station', '06.30-6.57');
    INSERT INTO `station` (`id`, `name`, `time`) VALUES ('2', 'EVolt Charging Station', '07.00-07.27');
     INSERT INTO `station` (`id`, `name`, `time`) VALUES ('3', 'EVolt Charging Station', '07.30-08.27');
@@ -33,7 +8,7 @@ CREATE TABLE station (
       INSERT INTO `station` (`id`, `name`, `time`) VALUES ('7', 'ปั๊มเอสโซ่ หจก.ภาณุออยล์ เซอร์วิส ', '06.30-06.57');
       INSERT INTO `station` (`id`, `name`, `time`) VALUES ('8', 'ปั๊มเอสโซ่ หจก.ภาณุออยล์ เซอร์วิส', '07.00-07.27');
       INSERT INTO `station` (`id`, `name`, `time`) VALUES ('9', 'ปั๊มเอสโซ่ หจก.ภาณุออยล์ เซอร์วิส', '07.30-08.27');
-      
+      INSERT INTO `station` (`id`, `name`, `time`) VALUES ('10', 'PTT Station ปตท.ห้าแยกพ่อขุน สถานีบริการน้ำมัน + NGV + EV เคยูออยล์', '06.30-06.57');
       INSERT INTO `station` (`id`, `name`, `time`) VALUES ('11', 'PTT Station ปตท.ห้าแยกพ่อขุน สถานีบริการน้ำมัน + NGV + EV เคยูออยล์', '07.00-07.27');
       INSERT INTO `station` (`id`, `name`, `time`) VALUES ('12', 'PTT Station ปตท.ห้าแยกพ่อขุน สถานีบริการน้ำมัน + NGV + EV เคยูออยล์', '07.30-08.27');
 INSERT INTO `station` (`id`, `name`, `time`) VALUES ('13', 'PTT Station ปตท.ริมกก (น้ำมัน+EV) หจก.ปัญญามอเตอร์ส', '06.30-06.57');
