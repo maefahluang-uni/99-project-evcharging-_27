@@ -2,7 +2,7 @@
 Ev Charging
 
 # Project Description
-The Electric Vehicle Charging project aims to create a comprehensive and user-friendly platform for electric vehicle owners to locate, compare, and review charging stations. This initiative is driven by the increasing adoption of electric vehicles and the need for a seamless charging experience.
+This project aims to create a modern and user-friendly platform for electric vehicle owners to locate charging stations, compare prices, assess available amenities, and provide feedback on the charging experience. The platform will also display information on the distances between each charging point, parking availability, and facilities at each location. The initiative is fueled by the growing prevalence of electric vehicles and the necessity for a seamless and unique charging experience.
 
 # Team Members                                                                  
 |No.|Group Member               |Id         |Github Account                                      |
