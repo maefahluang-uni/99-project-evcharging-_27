@@ -13,4 +13,5 @@ The Electric Vehicle Charging project aims to create a comprehensive and user-fr
 |4. |Nuttanon Kingkarwrungrote  |6531503102 |( https://github.com/Nuttanon-Kingkaewrungrote )    |
 |5. |Trin Rattanasiri           |6531503103 |(  https://github.com/Trin-Rattnasiri )             |
 |6. |Weerapat Suriwong          |6531503123 |(  https://github.com/weerapat-suriwong  )          |
-#
+# Deployed on Google Cloud
+https://lab-cd-kkelpy24ra-uc.a.run.app
