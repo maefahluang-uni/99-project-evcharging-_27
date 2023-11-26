@@ -33,7 +33,7 @@ CREATE TABLE station (
       INSERT INTO `station` (`id`, `name`, `time`) VALUES ('7', 'ปั๊มเอสโซ่ หจก.ภาณุออยล์ เซอร์วิส ', '06.30-06.57');
       INSERT INTO `station` (`id`, `name`, `time`) VALUES ('8', 'ปั๊มเอสโซ่ หจก.ภาณุออยล์ เซอร์วิส', '07.00-07.27');
       INSERT INTO `station` (`id`, `name`, `time`) VALUES ('9', 'ปั๊มเอสโซ่ หจก.ภาณุออยล์ เซอร์วิส', '07.30-08.27');
-      INSERT INTO `station` (`id`, `name`, `time`) VALUES ('10', 'PTT Station ปตท.ห้าแยกพ่อขุน สถานีบริการน้ำมัน + NGV + EV เคยูออยล์', '06.30-06.57');
+      
       INSERT INTO `station` (`id`, `name`, `time`) VALUES ('11', 'PTT Station ปตท.ห้าแยกพ่อขุน สถานีบริการน้ำมัน + NGV + EV เคยูออยล์', '07.00-07.27');
       INSERT INTO `station` (`id`, `name`, `time`) VALUES ('12', 'PTT Station ปตท.ห้าแยกพ่อขุน สถานีบริการน้ำมัน + NGV + EV เคยูออยล์', '07.30-08.27');
 INSERT INTO `station` (`id`, `name`, `time`) VALUES ('13', 'PTT Station ปตท.ริมกก (น้ำมัน+EV) หจก.ปัญญามอเตอร์ส', '06.30-06.57');
