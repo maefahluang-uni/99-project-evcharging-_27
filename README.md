@@ -21,6 +21,7 @@ Run program by : https://lab-cd-kkelpy24ra-uc.a.run.app
 https://lab-cd-kkelpy24ra-uc.a.run.app
 
 Customer function :
+- Customer can Register and Login 
 - Customer can Booking Station
 - Customer can Review Rating
 - Customer can view distance station by station
