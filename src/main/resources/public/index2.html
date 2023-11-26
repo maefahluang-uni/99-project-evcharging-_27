@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="mapstyle.css">
-    <link rel="stylesheet" href="user.css">
+   
 </head>
 
 <body>
@@ -22,72 +21,48 @@
                     <img src="../homepage/photo/logo.png" alt="">
                 </a>
             </div>
-           
-            <div class="main-content">
-                <div class="name">
-                    <h3><span id="usernamePlaceholder"></span></h3>
-                </div>
-                    <!-- ข้อมูลของผู้ใช้จะแสดงที่นี่ -->
-                    <div class="logout">
-                        <p><a href="#" onclick="logout()" style="color: red;">Logout</a></p>
-                    </div>
-                
+
+            <div class="loginbox">
+                <a href="login.html">Login</a>
             </div>
-    
-            
-    <script>
-        // ตรวจสอบว่ามีข้อมูลผู้ใช้ที่เข้าสู่ระบบมาหรือไม่
-        const username = localStorage.getItem('username');
-        const userId = localStorage.getItem('userId');
+            <div class="sign">
+                <a href="signup.html">Sign up</a>
+            </div>
 
-        if (username && userId) {
-            // แสดงข้อมูลผู้ใช้ที่เข้าสู่ระบบมา
-            document.getElementById('usernamePlaceholder').innerText = username;
-        } else {
-            // ไม่มีข้อมูลผู้ใช้, สามารถทำการ redirect หรือจัดการตามต้องการ
-            window.location = "login.html";
-        }
+          
+<ul>
+    <li>
+        <a href="#" onclick="alert('Please Login')">
+            <i class="bi bi-geo-alt-fill"></i>
+            <span>View map</span>
+        </a>
+    </li>
+    <li>
+        <a href="#" onclick="alert('Please Login')">
+            <i class="bi bi-calendar2-week-fill"></i>
+            <span>Booking History</span>
+        </a>
+    </li>
+    <li>
+        <a href="#" onclick="alert('Please Login')">
+            <i class="bi bi-ev-station"></i>
+            <span>Station</span>
+        </a>
+    </li>
+    <li>
+      
+</ul>
 
-        // เพิ่มฟังก์ชัน logout
-        function logout() {
-            localStorage.removeItem('username');
-            localStorage.removeItem('userId');
-            window.location = "/";
-        }
-    </script>
-
-            <ul>
-                <li>
-                    <a href="">
-                        <i class="bi bi-geo-alt-fill"></i>
-                        <span>View map</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="Bookinghistory.html">
-                        <i class="bi bi-calendar2-week-fill"></i>
-                        <span>Booking History</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="station.html">
-                        <i class="bi bi-ev-station"></i>
-                        <span>Station</span>
-                    </a>
-                </li>
-               
-                 
-            </ul>
 
         </div>
         <div class="navbar con">
 
             <div class="map">
-                <span><a href="#">Map</a></span>
+                <span><a href="#"onclick="alert('Please Login')" >Map</a></span>
             </div>
 
             <div class="station">
-                <span><a href="station.html">Booking</a></span>
+                <span><a href="#"onclick="alert('Please Login')">Booking</a></span>
             </div>
 
             <div class="searchcontainer">
@@ -103,6 +78,20 @@
         </div>
 
 
+        <script>
+            function checkLogin(action) {
+                // Replace this with your actual logic to check if the user is logged in
+                var isLoggedIn = false; // Change this to true if the user is logged in
+    
+                if (!isLoggedIn) {
+                    alert('You need to login first.');
+                } else {
+                    // Perform the desired action if the user is logged in
+                    alert('Performing ' + action + ' action.');
+                }
+            }
+        </script>
+
         <div class="content con">
             
             <div id="map"></div>
@@ -112,10 +101,6 @@
             <script>
                 function initMap() {
                     
-                    
-
-
-
                     var markerLatLng1 = { lat: 20.03425314862797, lng: 99.8751065274703 };
                     var markerLatLng2 = { lat: 19.886996601883553, lng: 99.83461210028254 };
                     var markerLatLng3 = { lat: 19.876944762864806, lng: 99.84804692380776 };
@@ -137,25 +122,17 @@
                     
                     // Check if Geolocation is supported by the browser
                     if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-        function (position) {
-            var userLatLng = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
-            };
+                        navigator.geolocation.getCurrentPosition(
+                            function (position) {
+                                var userLatLng = {
+                                    lat: position.coords.latitude,
+                                    lng: position.coords.longitude
+                                };
 
-            var map = new google.maps.Map(document.getElementById('map'), {
-                center: userLatLng,
-                zoom: 15
-            });
-
-            // Create a marker and set its position
-            var marker20 = new google.maps.Marker({
-                position: userLatLng,
-                map: map,
-                title: 'Your Location'
-            });
-        
+                                var map = new google.maps.Map(document.getElementById('map'), {
+                                    center: userLatLng,
+                                    zoom: 15
+                                });
 
                                 var markerImage = '<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><style>svg{fill:#ff6a00}</style><path d="M96 0C60.7 0 32 28.7 32 64V448c-17.7 0-32 14.3-32 32s14.3 32 32 32H320c17.7 0 32-14.3 32-32s-14.3-32-32-32V304h16c22.1 0 40 17.9 40 40v32c0 39.8 32.2 72 72 72s72-32.2 72-72V252.3c32.5-10.2 56-40.5 56-76.3V144c0-8.8-7.2-16-16-16H544V80c0-8.8-7.2-16-16-16s-16 7.2-16 16v48H480V80c0-8.8-7.2-16-16-16s-16 7.2-16 16v48H432c-8.8 0-16 7.2-16 16v32c0 35.8 23.5 66.1 56 76.3V376c0 13.3-10.7 24-24 24s-24-10.7-24-24V344c0-48.6-39.4-88-88-88H320V64c0-35.3-28.7-64-64-64H96zM216.9 82.7c6 4 8.5 11.5 6.3 18.3l-25 74.9H256c6.7 0 12.7 4.2 15 10.4s.5 13.3-4.6 17.7l-112 96c-5.5 4.7-13.4 5.1-19.3 1.1s-8.5-11.5-6.3-18.3l25-74.9H96c-6.7 0-12.7-4.2-15-10.4s-.5-13.3 4.6-17.7l112-96c5.5-4.7 13.4-5.1 19.3-1.1z"/></svg>';
                                 var markerImage2 = '<svg xmlns="http://www.w3.org/2000/svg"  height="1em" fill="#333" class="bi bi-p-circle-fill" viewBox="0 0 16 16">' +
@@ -184,20 +161,20 @@
                                 '<p>CCS 2 160kW<img src="../homepage/photo/ccs.png" alt=""></p>' +
                                 '<p class="facilities">Facilities: <span class="facility">Restrooms</span><span class="facility">Toilet</span> <span class="facility">Coffee Shop</span><span class="facility">Restaurant</span> <span class="facility">Shops</span></p>' +
                                 '<a id="navigate" href="https://maps.app.goo.gl/yrbPw5J2m2A4enkGA" target="_blank">Navigate</a>' +
-                                '<a id="book" href="booking.html" target="_blank">Book</a>' +
+                                '<a id="book" href="#" target="_blank">Book</a>' +
                                 '</div>'
                                 });
                                 infowindow.open(map, marker1);
                                 });
 
 
-                                
+
 
 
                                 var marker2 = new google.maps.Marker({
                                     position: markerLatLng2,
                                     map: map,
-                                    title: ' Central chiangrai',
+                                    title: 'PTT Station Central chiangrai',
                                     icon: {
                                         url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(markerImage),
                                         scaledSize: new google.maps.Size(30, 30),
@@ -206,11 +183,11 @@
                                 marker2.addListener('click', function() {
                                     var infowindow = new google.maps.InfoWindow({
                                 content: '<div class="custom-infowindow">' +
-                                '<a href="#"> Central chiangrai</a>' +
+                                '<a href="#">PTT Station Central chiangrai</a>' +
                                 '<p>AC Type 2 7kW <img src="../homepage/photo/ac.png" alt=""></p>' +
                                 '<p class="facilities">Facilities: <span class="facility">Restrooms</span> <span class="facility">Coffee Shop</span> <span class="facility">Wi-Fi</span> <span class="facility">Shops</span><span class="facility">Toilet</span> <span class="facility">parking</span></p>' +
-                                '<a id="navigate" href="https://maps.app.goo.gl/7w4CWyA5B9KhxUFY9" target="_blank">Navigate</a>' +
-                                '<a id="book" href="booking.html" target="_blank">Book</a>' +
+                                '<a id="navigate" href="https://maps.app.goo.gl/yrbPw5J2m2A4enkGA" target="_blank">Navigate</a>' +
+                                '<a id="book" href="#" target="_blank">Book</a>' +
                                 '</div>'
                                 });
                                 infowindow.open(map, marker2);
@@ -238,8 +215,8 @@
                                 '<a href="#">PTT Station PT Gas Station Liangmueangchiangrai1</a>' +
                                 '<p>CCs 22 kw <img src="../homepage/photo/ccs.png" alt=""></p>' +
                                 '<p class="facilities">Facilities: <span class="facility">Restrooms</span> <span class="facility">Coffee Shop</span> <span class="facility">parking</span> <span class="facility">Shops</span> <span class="facility">Wi-Fi</span></p>' +
-                                '<a id="navigate" href="https://maps.app.goo.gl/X2uY816XDHnGVMW76" target="_blank">Navigate</a>' +
-                                '<a id="book" href="booking.html" target="_blank">Book</a>' +
+                                '<a id="navigate" href="https://maps.app.goo.gl/yrbPw5J2m2A4enkGA" target="_blank">Navigate</a>' +
+                                '<a id="book" href="#" target="_blank">Book</a>' +
                                 '</div>'
                                 });
                                 infowindow.open(map, marker3);
@@ -260,11 +237,11 @@
                                 marker4.addListener('click', function() {
                                     var infowindow = new google.maps.InfoWindow({
                                 content: '<div class="custom-infowindow">' +
-                                '<a href="#"> Nap Bed S EV Station</a>' +
+                                '<a href="#">PTT Station Nap Bed S EV Station</a>' +
                                 '<p>AC Type 2 22kW <img src="../homepage/photo/ac.png" alt=""></p>' +
                                 '<p class="facilities">Facilities: <span class="facility">Toilet</span> <span class="facility">Restrooms</span> <span class="facility">WiFi</span> <span class="facility">parking</span> <span class="facility">Shops</span></p>' +
-                                '<a id="navigate" href="https://maps.app.goo.gl/J9uHPGzMLcgGrCMEA" target="_blank">Navigate</a>' +
-                                '<a id="book" href="booking.html"target="_blank">Book</a>' +
+                                '<a id="navigate" href="https://maps.app.goo.gl/yrbPw5J2m2A4enkGA" target="_blank">Navigate</a>' +
+                                '<a id="book" href="#" target="_blank">Book</a>' +
                                 '</div>'
                                 });
                                     
@@ -289,9 +266,10 @@
                                 '<a href="#">PTT Station EVolt Charging Station</a>' +
                                 '<p>AC Type 2 43kW <img src="../homepage/photo/ac.png" alt=""></p>' +
                                 '<p>CCs 50kw <img src="../homepage/photo/ccs.png" alt=""></p>' +
+                                '<p>CHAdeMO 50kW<img src="../homepage/photo/ccs.png" alt=""></p>' +
                                 '<p class="facilities">Facilities: <span class="facility">Restrooms</span> <span class="facility">Restaurant</span><span class="facility">Toilet</span> <span class="facility">Shops</span></p>' +
-                                '<a id="navigate" href="https://maps.app.goo.gl/ACeFdEbFJefPsQfP7" target="_blank">Navigate</a>' +
-                                '<a id="book" href="booking.html" target="_blank">Book</a>' +
+                                '<a id="navigate" href="https://maps.app.goo.gl/yrbPw5J2m2A4enkGA" target="_blank">Navigate</a>' +
+                                '<a id="book" href="#" target="_blank">Book</a>' +
                                 '</div>'
                                 });
                                     
@@ -316,8 +294,8 @@
                                 '<a href="#">PTT Station PTT Station ปตท.เวียงป่าเป้า</a>' +
                                 '<p>AC Type 2 22kW <img src="../homepage/photo/ac.png" alt=""></p>' +
                                 '<p class="facilities">Facilities: <span class="facility">Restrooms</span> <span class="facility">parking</span> <span class="facility">shops</span><span class="facility">Toilet</span> <span class="facility">coffee shops</span> <span class="facility">restaurants</span></p>' +
-                                '<a id="navigate" href="https://maps.app.goo.gl/PAtV6q7y7fk5LBPW6" target="_blank">Navigate</a>' +
-                                '<a id="book" href="booking.html"target="_blank">Book</a>' +
+                                '<a id="navigate" href="https://maps.app.goo.gl/yrbPw5J2m2A4enkGA" target="_blank">Navigate</a>' +
+                                '<a id="book" href="#" target="_blank">Book</a>' +
                                 '</div>'
              
                                 });
@@ -343,8 +321,8 @@
                                 '<p>AC Type 2 22kW <img src="../homepage/photo/ac.png" alt=""></p>' +
                                 '<p>CCs 120kw <img src="../homepage/photo/ccs.png" alt=""></p>' +
                                 '<p class="facilities">Facilities: <span class="facility">Restrooms</span> <span class="facility">Restaurant</span><span class="facility">Toilet</span> <span class="facility">Shops</span></p>' +
-                                '<a id="navigate" href="https://maps.app.goo.gl/b2dKzMJbNy3PmWsa9" target="_blank">Navigate</a>' +
-                                '<a id="book" href="booking.html" target="_blank">Book</a>' +
+                                '<a id="navigate" href="https://maps.app.goo.gl/yrbPw5J2m2A4enkGA" target="_blank">Navigate</a>' +
+                                '<a id="book" href="#" target="_blank">Book</a>' +
                                 '</div>'
                                 });
      
@@ -370,8 +348,8 @@
                                 '<p>AC Type 2 22kW <img src="../homepage/photo/ac.png" alt=""></p>' +
                                 '<p>CCs 160kw <img src="../homepage/photo/ccs.png" alt=""></p>' +
                                 '<p class="facilities">Facilities: <span class="facility">Restrooms</span> <span class="facility">Restaurant</span><span class="facility">Toilet</span> <span class="facility">Shops</span></p>' +
-                                '<a id="navigate" href="https://maps.app.goo.gl/giKRjKPxD6ESXpqL6" target="_blank">Navigate</a>' +
-                                '<a id="book" href="booking.html" target="_blank">Book</a>' +
+                                '<a id="navigate" href="https://maps.app.goo.gl/yrbPw5J2m2A4enkGA" target="_blank">Navigate</a>' +
+                                '<a id="book" href="#" target="_blank">Book</a>' +
                                 '</div>'
                                 });
      
@@ -397,8 +375,8 @@
                                 '<p>AC Type 2 22kW <img src="../homepage/photo/ac.png" alt=""></p>' +
                                 '<p>CCs 120kw <img src="../homepage/photo/ccs.png" alt=""></p>' +
                                 '<p class="facilities">Facilities: <span class="facility">Restrooms</span> <span class="facility">Restaurant</span><span class="facility">Toilet</span> <span class="facility">Shops</span></p>' +
-                                '<a id="navigate" href="https://maps.app.goo.gl/k1pbNc6cXtxLHZ7p7" target="_blank">Navigate</a>' +
-                                '<a id="book" href="booking.html" target="_blank">Book</a>' +
+                                '<a id="navigate" href="https://maps.app.goo.gl/yrbPw5J2m2A4enkGA" target="_blank">Navigate</a>' +
+                                '<a id="book" href="#" target="_blank">Book</a>' +
                                 '</div>'
                                 });
      
@@ -423,8 +401,8 @@
                                 '<a href="#">PTT Station   PTT Station ปตท.แม่ขะจาน </a>' +
                                 '<p>AC Type 2 7kW <img src="../homepage/photo/ac.png" alt=""></p>' +
                                 '<p class="facilities">Facilities: <span class="facility">Restrooms</span> <span class="facility">Restaurant</span><span class="facility">Toilet</span> <span class="facility">Shops</span></p>' +
-                                '<a id="navigate" href="https://maps.app.goo.gl/BGWiQDaDWKZmAC1T7" target="_blank">Navigate</a>' +
-                                '<a id="book" href="booking.html" target="_blank">Book</a>' +
+                                '<a id="navigate" href="https://maps.app.goo.gl/yrbPw5J2m2A4enkGA" target="_blank">Navigate</a>' +
+                                '<a id="book" href="#" target="_blank">Book</a>' +
                                 '</div>'
                                 });
      
@@ -450,8 +428,8 @@
                                 '<p>AC Type 2 22kW <img src="../homepage/photo/ac.png" alt=""></p>' +
                                 '<p>CCs 160kw <img src="../homepage/photo/ccs.png" alt=""></p>' +
                                 '<p class="facilities">Facilities: <span class="facility">Restrooms</span> <span class="facility">Restaurant</span><span class="facility">Toilet</span> <span class="facility">Shops</span></p>' +
-                                '<a id="navigate" href="https://maps.app.goo.gl/KHZ8qEPieUzD9eti8" target="_blank">Navigate</a>' +
-                                '<a id="book" href="booking.html" target="_blank">Book</a>' +
+                                '<a id="navigate" href="https://maps.app.goo.gl/yrbPw5J2m2A4enkGA" target="_blank">Navigate</a>' +
+                                '<a id="book" href="#" target="_blank">Book</a>' +
                                 '</div>'
                                 });
      
@@ -475,8 +453,8 @@
                                 content: '<div class="custom-infowindow">' +
                                 '<a href="#">หมวดทางหลวงแม่สาย</a>' +
                                 '<p class="facilities">Facilities: <span class="facility">Restrooms</span> <span class="facility">Shops</span><span class="facility">Toilet</span> <span class="facility">parking</span></p>' +
-                                '<a id="navigate" href="https://maps.app.goo.gl/uzeHpwyq3qgSyvpZ8" target="_blank">Navigate</a>' +
-                                '<a id="book" href="booking.html" target="_blank">Book</a>' +
+                                '<a id="navigate" href="https://maps.app.goo.gl/yrbPw5J2m2A4enkGA" target="_blank">Navigate</a>' +
+                                '<a id="book" href="#" target="_blank">Book</a>' +
                                 '</div>'
                                 });
                                 infowindow.open(map, marker12);
@@ -498,8 +476,8 @@
                                 content: '<div class="custom-infowindow">' +
                                 '<a href="#">หมวดทางหลวงแม่จัน</a>' +
                                 '<p class="facilities">Facilities: <span class="facility">Restrooms</span> <span class="facility">Shops</span><span class="facility">Toilet</span> <span class="facility">parking</span></p>' +
-                                '<a id="navigate" href="https://maps.app.goo.gl/7C8namAnXSyRXRZK6" target="_blank">Navigate</a>' +
-                                '<a id="book" href="booking.html" target="_blank">Book</a>' +
+                                '<a id="navigate" href="https://maps.app.goo.gl/yrbPw5J2m2A4enkGA" target="_blank">Navigate</a>' +
+                                '<a id="book" href="#" target="_blank">Book</a>' +
                                 '</div>'
                                 });
                                 infowindow.open(map, marker13);
@@ -520,8 +498,8 @@
                                 content: '<div class="custom-infowindow">' +
                                 '<a href="#">หมวดทางหลวงเชียงราย</a>' +
                                 '<p class="facilities">Facilities: <span class="facility">Restrooms</span> <span class="facility">Shops</span><span class="facility">Toilet</span> <span class="facility">parking</span></p>' +
-                                '<a id="navigate" href="https://maps.app.goo.gl/xsf5Rgz8HuaAc84T6" target="_blank">Navigate</a>' +
-                                '<a id="book" href="booking.html" target="_blank">Book</a>' +
+                                '<a id="navigate" href="https://maps.app.goo.gl/yrbPw5J2m2A4enkGA" target="_blank">Navigate</a>' +
+                                '<a id="book" href="#" target="_blank">Book</a>' +
                                 '</div>'
                                 });
                                 infowindow.open(map, marker14);
@@ -542,8 +520,8 @@
                                 content: '<div class="custom-infowindow">' +
                                 '<a href="#">หมวดทางหลวงเชียงรายที่ 2</a>' +
                                 '<p class="facilities">Facilities: <span class="facility">Restrooms</span> <span class="facility">Shops</span><span class="facility">Toilet</span> <span class="facility">parking</span></p>' +
-                                '<a id="navigate" href="https://maps.app.goo.gl/1SjinfYNevLw6UJY6" target="_blank">Navigate</a>' +
-                                '<a id="book" href="booking.html" target="_blank">Book</a>' +
+                                '<a id="navigate" href="https://maps.app.goo.gl/yrbPw5J2m2A4enkGA" target="_blank">Navigate</a>' +
+                                '<a id="book" href="#" target="_blank">Book</a>' +
                                 '</div>'
                                 });
                                 infowindow.open(map, marker15);
@@ -563,8 +541,8 @@
                                 content: '<div class="custom-infowindow">' +
                                 '<a href="#">หมวดทางหลวงแม่ลาว</a>' +
                                 '<p class="facilities">Facilities: <span class="facility">Restrooms</span> <span class="facility">Shops</span><span class="facility">Toilet</span> <span class="facility">parking</span></p>' +
-                                '<a id="navigate" href="https://maps.app.goo.gl/JrBjWJqTtniyGfUa8" target="_blank">Navigate</a>' +
-                                '<a id="book" href="booking.html" target="_blank">Book</a>' +
+                                '<a id="navigate" href="https://maps.app.goo.gl/yrbPw5J2m2A4enkGA" target="_blank">Navigate</a>' +
+                                '<a id="book" href="#" target="_blank">Book</a>' +
                                 '</div>'
                                 });
                                 infowindow.open(map, marker16);
@@ -584,8 +562,8 @@
                                 content: '<div class="custom-infowindow">' +
                                 '<a href="#">หมวดทางหลวงแม่สรวย</a>' +
                                 '<p class="facilities">Facilities: <span class="facility">Restrooms</span> <span class="facility">Shops</span><span class="facility">Toilet</span> <span class="facility">parking</span></p>' +
-                                '<a id="navigate" href="https://maps.app.goo.gl/vcF2gRNrTJqdrATY8" target="_blank">Navigate</a>' +
-                                '<a id="book" href="booking.html" target="_blank">Book</a>' +
+                                '<a id="navigate" href="https://maps.app.goo.gl/yrbPw5J2m2A4enkGA" target="_blank">Navigate</a>' +
+                                '<a id="book" href="#" target="_blank">Book</a>' +
                                 '</div>'
                                 });
                                 infowindow.open(map, marker17);
