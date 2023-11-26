@@ -49,19 +49,19 @@
             background-color: #0056b3;
         }
 
-        /* เพิ่มสีพื้นหลังและขอบมุมสำหรับ "charge" */
+        
         .charge {
-            background-color: #f0f0f0; /* สีพื้นหลัง */
-            border: 1px solid #ccc; /* ขอบ */
-            border-radius: 10px; /* มุมโค้ง */
-            padding: 10px; /* ระยะห่างขอบ */
-            margin-top: 20px; /* ระยะห่างด้านบน */
+            background-color: #f0f0f0; 
+            border: 1px solid #ccc; 
+            border-radius: 10px; 
+            padding: 10px; 
+            margin-top: 20px; 
         }
 
-        /* ปรับสีข้อความ */
+        
         .charge p {
-            color: #333; /* สีข้อความ */
-            margin: 5px 0; /* ระยะห่างข้อความ */
+            color: #333; 
+            margin: 5px 0; 
         }
         .booking-info {
             background-color: #fff;
@@ -127,7 +127,7 @@
                 <div class="name">
                     <h3><span id="usernamePlaceholder"></span></h3>
                 </div>
-                    <!-- ข้อมูลของผู้ใช้จะแสดงที่นี่ -->
+                    
                     <div class="logout">
                         <p><a href="#" onclick="logout()" style="color: red;">Logout</a></p>
                     </div>
@@ -136,19 +136,19 @@
 
 
     <script>
-        // ตรวจสอบว่ามีข้อมูลผู้ใช้ที่เข้าสู่ระบบมาหรือไม่
+       
         const username = localStorage.getItem('username');
         const userId = localStorage.getItem('userId');
 
         if (username && userId) {
-            // แสดงข้อมูลผู้ใช้ที่เข้าสู่ระบบมา
+            
             document.getElementById('usernamePlaceholder').innerText = username;
         } else {
-            // ไม่มีข้อมูลผู้ใช้, สามารถทำการ redirect หรือจัดการตามต้องการ
+            
             window.location = "login.html";
         }
 
-        // เพิ่มฟังก์ชัน logout
+       
         function logout() {
             localStorage.removeItem('username');
             localStorage.removeItem('userId');
@@ -198,9 +198,9 @@
 
             <div class="booking-info">
                 <h2>Booking History</h2>
-                <!-- Add your booking form here if needed -->
+                
 
-                <!-- Display the result of the review function here -->
+                
                 <div id="reviewResult"></div>
             </div
 
@@ -251,7 +251,7 @@
         }
     }
 
-    // Call review() when the page loads
+    
     window.onload = function() {
         review();
     };

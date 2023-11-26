@@ -68,7 +68,7 @@
             <div class="name">
                 <h3><span id="usernamePlaceholder"></span></h3>
             </div>
-                <!-- ข้อมูลของผู้ใช้จะแสดงที่นี่ -->
+              
                 <div class="logout">
                     <p><a href="#" onclick="logout()" style="color: red;">Logout</a></p>
                 </div>
@@ -77,19 +77,19 @@
 
         
 <script>
-    // ตรวจสอบว่ามีข้อมูลผู้ใช้ที่เข้าสู่ระบบมาหรือไม่
+  
     const username = localStorage.getItem('username');
     const userId = localStorage.getItem('userId');
 
     if (username && userId) {
-        // แสดงข้อมูลผู้ใช้ที่เข้าสู่ระบบมา
+        
         document.getElementById('usernamePlaceholder').innerText = username;
     } else {
-        // ไม่มีข้อมูลผู้ใช้, สามารถทำการ redirect หรือจัดการตามต้องการ
+        
         window.location = "login.html";
     }
 
-    // เพิ่มฟังก์ชัน logout
+    
     function logout() {
         localStorage.removeItem('username');
         localStorage.removeItem('userId');
@@ -145,14 +145,14 @@
 
         <div class="content con">
             <div class="constation">
-                <!-- Location 1 -->
+                
                 <div class="loc1">
                     <h2>EVolt Charging Station</h2>
                     <img src=https://s3-ap-southeast-1.amazonaws.com/motoristprod/editors%2Fimages%2F1665045694755-EV-Station-PluZ-2-660x400%402x.jpg
                      alt="Location 3 Image">
                      <h1>Review Comments</h1>
                      <div id="comments-container">
-                       <!-- ที่นี่จะเป็นส่วนที่แสดงความคิดเห็น -->
+                       
                      </div>
                      <div id="add-comment-form">
                        <h2>Add a Comment</h2>
@@ -167,10 +167,10 @@
                    </div>
                  
                    <script>
-                     // เก็บความคิดเห็น
+                     
                      let comments = [];
                  
-                     // เพิ่มความคิดเห็น
+                    
                      function addComment() {
                        const username = document.getElementById('username').value;
                        const commentText = document.getElementById('comment').value;
@@ -188,7 +188,7 @@
                        }
                      }
                  
-                     // แสดงความคิดเห็น
+                     
                      function displayComments() {
                        const commentsContainer = document.getElementById('comments-container');
                        commentsContainer.innerHTML = '';
@@ -214,13 +214,13 @@
                        });
                      }
                  
-                     // ล้างฟอร์ม
+                     
                      function clearForm() {
                        document.getElementById('username').value = '';
                        document.getElementById('comment').value = '';
                      }
                  
-                     // เรียกใช้ฟังก์ชั่นเพื่อแสดงความคิดเห็นที่มีอยู่
+                     
                      displayComments();
                    </script>
 
