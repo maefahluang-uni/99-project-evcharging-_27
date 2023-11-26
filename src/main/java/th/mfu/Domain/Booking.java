@@ -20,6 +20,23 @@ public class Booking {
     @Column(name = "field_five")
     private String fieldFive;
 
+     // One Booking belongs to one User
+     @OneToOne
+     @JoinColumn(name = "user_id")
+     private User user;
+
+
+    public String getFieldFour() {
+        return fieldFour;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public Long getId() {
         return id;

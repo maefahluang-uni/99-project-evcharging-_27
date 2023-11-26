@@ -3,6 +3,7 @@
 /workspaces/99-project-evcharging-_27/src/main/java/th/mfu/Controller/LoginController.java
 /workspaces/99-project-evcharging-_27/src/main/java/th/mfu/Domain/Booking.java
 /workspaces/99-project-evcharging-_27/src/main/java/th/mfu/Repository/StationRepository.java
+/workspaces/99-project-evcharging-_27/src/main/java/th/mfu/Domain/Provider.java
 /workspaces/99-project-evcharging-_27/src/main/java/th/mfu/Controller/RegisterController.java
 /workspaces/99-project-evcharging-_27/src/main/java/th/mfu/Service/BookingService.java
 /workspaces/99-project-evcharging-_27/src/main/java/th/mfu/Service/LoginService.java

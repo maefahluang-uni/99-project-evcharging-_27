@@ -14,6 +14,34 @@ public class Station {
     @Column(name = "time")
     private String time;
 
+
+    @ManyToOne
+    @JoinColumn(name = "admin_id")
+    private Provider admin;
+
+    // One Station belongs to one User
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Provider getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Provider admin) {
+        this.admin = admin;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -36,5 +64,13 @@ public class Station {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

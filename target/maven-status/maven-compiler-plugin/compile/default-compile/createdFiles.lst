@@ -2,6 +2,7 @@ th/mfu/Repository/StationRepository.class
 th/mfu/Service/BookingService.class
 th/mfu/Controller/ReviewController.class
 th/mfu/Repository/BookingRepository.class
+th/mfu/Domain/Provider.class
 th/mfu/App.class
 th/mfu/Model/LoginModel.class
 th/mfu/Service/ReviewService.class
