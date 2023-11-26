@@ -122,44 +122,47 @@
 
 
     <script>
-        document.getElementById('signupButton').addEventListener('click', signup);
-        
         function signup() {
-            const name = document.getElementById('name').value;
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const confPassword = document.getElementById('conf_password').value;
+    const name = document.getElementById('name').value;
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const confPassword = document.getElementById('conf_password').value;
 
-            // Basic client-side validation
-            if (!name || !username || !password || !confPassword || password !== confPassword) {
-                alert('Please fill in all fields and make sure passwords match.');
-                return;
-            }
+    if (!name || !username || !password || !confPassword || password !== confPassword) {
+        alert('Please fill in all fields and make sure passwords match.');
+        return;
+    }
 
-            // Simulate AJAX request
-            const xhr = new XMLHttpRequest();
-            xhr.open('POST', 'http://localhost:8100/regis'); // Update with your server endpoint
-            xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-            
-            const body = JSON.stringify({
-                username: username,
-                password: password,
-                name: name,
-            });
+    const url = 'http://localhost:8100/regis'; // Update with your server endpoint
 
-            xhr.onload = () => {
-                if (xhr.status == 200) {
-                    console.log('Registration successful:', JSON.parse(xhr.responseText));
-                    alert('Registration successful!');
-                    window.location = "login.html"
-                } else {
-                    console.log('Error:', xhr.status);
-                    alert('Registration failed. Please try again.');
-                }
-            };
-
-            xhr.send(body);
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: JSON.stringify({
+            username: username,
+            password: password,
+            name: name,
+        }),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
         }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Registration successful:', data);
+        alert('Registration successful!');
+        window.location.href = "login.html"; // ใช้ `window.location.href` แทน `window.location`
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Registration failed. Please try again.');
+    });
+}
+
     </script>
 
 </body>
