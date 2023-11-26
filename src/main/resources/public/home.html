@@ -27,7 +27,7 @@
                 <div class="name">
                     <h3><span id="usernamePlaceholder"></span></h3>
                 </div>
-                    <!-- ข้อมูลของผู้ใช้จะแสดงที่นี่ -->
+                   
                     <div class="logout">
                         <p><a href="#" onclick="logout()" style="color: red;">Logout</a></p>
                     </div>
@@ -36,19 +36,19 @@
     
             
     <script>
-        // ตรวจสอบว่ามีข้อมูลผู้ใช้ที่เข้าสู่ระบบมาหรือไม่
+       
         const username = localStorage.getItem('username');
         const userId = localStorage.getItem('userId');
 
         if (username && userId) {
-            // แสดงข้อมูลผู้ใช้ที่เข้าสู่ระบบมา
+            
             document.getElementById('usernamePlaceholder').innerText = username;
         } else {
-            // ไม่มีข้อมูลผู้ใช้, สามารถทำการ redirect หรือจัดการตามต้องการ
+            
             window.location = "login.html";
         }
 
-        // เพิ่มฟังก์ชัน logout
+        
         function logout() {
             localStorage.removeItem('username');
             localStorage.removeItem('userId');
@@ -135,7 +135,7 @@
                     var markerLatLng17 = { lat: 19.521874172762132, lng:  99.48124691784449 };
 
                     
-                    // Check if Geolocation is supported by the browser
+                    
                     if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
         function (position) {
@@ -149,7 +149,7 @@
                 zoom: 15
             });
 
-            // Create a marker and set its position
+            
             var marker20 = new google.maps.Marker({
                 position: userLatLng,
                 map: map,

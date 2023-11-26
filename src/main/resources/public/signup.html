@@ -130,15 +130,15 @@
             const password = document.getElementById('password').value;
             const confPassword = document.getElementById('conf_password').value;
 
-            // Basic client-side validation
+          
             if (!name || !username || !password || !confPassword || password !== confPassword) {
                 alert('Please fill in all fields and make sure passwords match.');
                 return;
             }
 
-            // Simulate AJAX request
+            
             const xhr = new XMLHttpRequest();
-            xhr.open('POST', 'https://lab-cd-kkelpy24ra-uc.a.run.app/regis'); // Update with your server endpoint
+            xhr.open('POST', 'https://lab-cd-kkelpy24ra-uc.a.run.app/regis'); 
             xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
            
 

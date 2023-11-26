@@ -45,7 +45,7 @@ body {
 }
 
 
-ul li a i{ /*ใส่สีโลโก้*/
+ul li a i{ 
     color: #FF6F31;
 }
 
@@ -210,13 +210,13 @@ ul{
 }
 
 .loc1 img {
-    width: 100%; /* Ensure the image takes up the full width of its container */
+    width: 100%; 
     border-radius: 8px;
     margin-bottom: 15px;
     margin: 10px 0;
 }
 
-/* Additional styling for the review form inside loc1 */
+
 .review-form {
     background-color: #ffffff;
     border-radius: 8px;
@@ -254,7 +254,7 @@ ul{
 }
 
 .rating input[type="radio"] {
-    margin-right: 5px; /* Adjust spacing between radio buttons */
+    margin-right: 5px; 
 }
 
 .review-form button {

@@ -80,13 +80,13 @@
 
         <script>
             function checkLogin(action) {
-                // Replace this with your actual logic to check if the user is logged in
-                var isLoggedIn = false; // Change this to true if the user is logged in
+                
+                var isLoggedIn = false; 
     
                 if (!isLoggedIn) {
                     alert('You need to login first.');
                 } else {
-                    // Perform the desired action if the user is logged in
+               
                     alert('Performing ' + action + ' action.');
                 }
             }
@@ -120,7 +120,7 @@
                     var markerLatLng17 = { lat: 19.521874172762132, lng:  99.48124691784449 };
 
                     
-                    // Check if Geolocation is supported by the browser
+                   
                     if (navigator.geolocation) {
                         navigator.geolocation.getCurrentPosition(
                             function (position) {
